@@ -5,7 +5,7 @@
     public $info;
     public function __construct( $_object ) {
       if(!is_object($_object))
-        throw new InvalidArgumentException("Parameter must be an object.");
+        throw new JException("Parameter must be an object.");
       $this->setConnection(
         $_object->server,
         $_object->database,
@@ -22,21 +22,31 @@
         case "postgresql":
           $this->database = new PostgresqlAdapter($_srv, $_db, $_usr, $_pass);
         break;
-        case "memory":
-          $this->database = new PdoMemoryAdapter($_srv, $_db, $_usr, $_pass);
+        case "pdo-sqlite-memory":
+          $this->database = new PdoAdapterSqLiteMemory($_srv, $_db, $_usr, $_pass);
         break;
-        case "pdo":
+        case "pdo-sqlite-file":
+          $this->database = new PdoAdapterSqLiteFile($_srv, $_db, $_usr, $_pass);
+        break;
+        case "pdo-mysql":
         default:
-          $this->database = new PdoAdapter($_srv, $_db, $_usr, $_pass);
+          $this->database = new PdoAdapterMysql($_srv, $_db, $_usr, $_pass);
         break;
       }
+      $this->info = [
+        "srv"  => $_srv,
+        "db"   => $_db,
+        "usr"  => $_usr,
+        "pass" => $_pass,
+        "type" => $_type
+      ];
     }
     protected function getConnectionType( $_type ) {
       $array = (array)$_type;
       foreach ($array as $key => $value)
         if($value)
           return $key;
-      return "pdo";
+      return "default";
     }
   }
 ?>

@@ -1,19 +1,43 @@
-# JATE
-Just Another Template Engine
-
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/XaBerr/JATE/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/XaBerr/JATE/?branch=master)
-[![Code Climate](https://codeclimate.com/github/XaBerr/JATE/badges/gpa.svg)](https://codeclimate.com/github/XaBerr/JATE)
-[![Build Status](https://travis-ci.org/XaBerr/JATE.svg?branch=master)](https://travis-ci.org/XaBerr/JATE)
+<p align="center">
+  <a href="http://xaberr.github.io/jate-docs/">
+    <img src="https://user-images.githubusercontent.com/16030020/38464888-46374c10-3b15-11e8-84e8-47e57291da5c.png" alt="logo" width=72 height=72>
+  </a>
+  <h3 align="center">JATE</h3>
+  <p align="center">
+    Just Another Template Engine for PHP.
+    <br>
+    <a href="https://jatephp.github.io/jate-docs/"><strong>- Explore JATE DOCS -</strong></a>
+    <br>
+    <br>
+    <a href="https://scrutinizer-ci.com/g/XaBerr/JATE/?branch=master">
+      <img src="https://scrutinizer-ci.com/g/XaBerr/JATE/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality">
+    </a>
+    <a href="https://codeclimate.com/github/XaBerr/JATE">
+      <img src="https://codeclimate.com/github/XaBerr/JATE/badges/gpa.svg" alt="Code Climate">
+    </a>
+    <a href="https://travis-ci.org/XaBerr/JATE">
+      <img src="https://travis-ci.org/XaBerr/JATE.svg?branch=master" alt="Build Status">
+    </a>
+    <br>
+    <a href="https://packagist.org/packages/xaberr/jate">
+      <img src="https://poser.pugx.org/xaberr/jate/v/unstable" alt="Latest Unstable Version">
+    </a>
+    <a href="https://packagist.org/packages/xaberr/jate">
+      <img src="https://poser.pugx.org/xaberr/jate/license" alt="License">
+    </a>
+    <a href="https://basicallydan.github.io/forkability/?u=XaBerr&r=JATE&l=PHP">
+      <img src="https://img.shields.io/badge/forkable-yes-brightgreen.svg" alt="This is a forkable respository">
+    </a>
+  </p>
+</p>
 <br>
-[![Latest Unstable Version](https://poser.pugx.org/xaberr/jate/v/unstable)](https://packagist.org/packages/xaberr/jate)
-[![License](https://poser.pugx.org/xaberr/jate/license)](https://packagist.org/packages/xaberr/jate)
-[![This is a forkable respository](https://img.shields.io/badge/forkable-yes-brightgreen.svg)](https://basicallydan.github.io/forkability/?u=XaBerr&r=JATE&l=PHP)
 
 ## WHAT IS JATE?
 JATE is a new light and hackable framework for PHP.<br>
-It's simple to lern and simple to customize.<br>
+It's simple to learn and simple to customize.<br>
 JATE contains the minimum of libraries and functions to get you started.<br>
 Recommend the use of Bootstrap4, all examples use it.<br>
+
 ## FEAUTURES
 - Thought to write less code
 - Designed to focus only on the frontend
@@ -27,31 +51,3 @@ Recommend the use of Bootstrap4, all examples use it.<br>
 
 ## REQUIREMENTS
 JATE requires PHP 5.4 or higher.
-## HOW TO INSTALL
-Install or download JATE to the root folder of your project.
-### DOWNLOADS
-###### GIT
-```
-git clone https://github.com/XaBerr/JATE.git
-```
-###### BOWER
-```
-bower install JATE
-```
-###### COMPOSER
-```
-composer require xaberr/jate:dev-master
-```
-###### NPM
-```
-npm install jate-framework
-```
-###### MANUAL
-Download and uncompress [zip](https://github.com/XaBerr/JATE/archive/master.zip) file from GitHub.
-
-## Other contents
-
-#### [GETTING STARTED](http://xaberr.github.io/JATE/)
-Where to start if you do not know anything about JATE.
-#### [EXAMPLES](https://github.com/XaBerr/JATE/tree/master/examples)
-A list of sample sites.

@@ -28,9 +28,6 @@
       try {
         $this->connection["$_name"] = $_connection;
         $this->currentConnection = $_connection;
-        foreach ($this->modules as &$module)
-          if(isset($this->currentConnection))
-            $module->addConnectionMan($this->currentConnection, $_name);
       } catch (Exception $e) {
         throw new JException($e->getMessage(), 1);
       }
@@ -45,6 +42,8 @@
     public function query( $_query ) {
       if(!is_string($_query))
         throw new JException("Parameter must be a string.", 1);
+      if($this->currentConnection == null)
+        throw new JException("No connection selected.", 1);
       try {
         $temp = $this->currentConnection->database->query($_query);
       } catch (Exception $e) {
@@ -55,6 +54,8 @@
     public function queryInsert( $_query ) {
       if(!is_string($_query))
         throw new JException("Parameter must be a string.", 1);
+      if($this->currentConnection == null)
+        throw new JException("No connection selected.", 1);
       try {
         $temp = $this->currentConnection->database->queryInsert($_query);
       } catch (Exception $e) {
@@ -65,6 +66,8 @@
     public function queryFetch( $_query ) {
       if(!is_string($_query))
         throw new JException("Parameter must be a string.", 1);
+      if($this->currentConnection == null)
+        throw new JException("No connection selected.", 1);
       try {
         $temp = $this->currentConnection->database->queryFetch($_query);
       } catch (Exception $e) {
@@ -75,8 +78,22 @@
     public function queryArray( $_query ) {
       if(!is_string($_query))
         throw new JException("Parameter must be a string.", 1);
+      if($this->currentConnection == null)
+        throw new JException("No connection selected.", 1);
       try {
         $temp = $this->currentConnection->database->queryArray($_query);
+      } catch (Exception $e) {
+        throw new JException($e->getMessage(), 1);
+      }
+      return $temp;
+    }
+    public function newTable( $_query ) {
+      if(!is_string($_query))
+        throw new JException("Parameter must be a string.", 1);
+      if($this->currentConnection == null)
+        throw new JException("No connection selected.", 1);
+      try {
+        $temp = $this->currentConnection->database->newTable($_query);
       } catch (Exception $e) {
         throw new JException($e->getMessage(), 1);
       }

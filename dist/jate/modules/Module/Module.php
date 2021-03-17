@@ -4,6 +4,7 @@
   class Module {
     use Query {
       Query::__construct as private __queryConstruct;
+      Query::addConnectionMan as private __addConnectionMan;
     }
     use File {
       File::__construct as private __fileConstruct;
@@ -30,6 +31,16 @@
       $this->modules[$_module->name] = $_module;
       if($this->currentConnection)
         $this->modules[$_module->name]->addConnectionMan($this->currentConnection);
+    }
+    public function addConnectionMan( $_connection, $_name = "default") {
+      try {
+        $this->__addConnectionMan($_connection, $_name);
+        foreach ($this->modules as &$module)
+          if(isset($this->currentConnection))
+            $module->addConnectionMan($this->currentConnection, $_name);
+      } catch (Exception $e) {
+        throw new JException($e->getMessage(), 1);
+      }
     }
   }
 ?>
